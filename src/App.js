@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -6,6 +5,7 @@ function App() {
     <div className="App">
       <div>
         <h1 className='text-6xl text-red-500'>Hello, Teste Tailwind</h1>
+        <button className='btn btn-blue'>Click me </button>
       </div>
     </div>
   );
