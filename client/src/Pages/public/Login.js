@@ -9,7 +9,6 @@ import Messages from '../../includes/enums/Messages.js';
 
 
 function Login(props) {
-    const {loggedIn,setLoggedIn} = props
     const cookies = new Cookies()
     const navigate = useNavigate()
 
@@ -23,13 +22,15 @@ const inputListener = (e) => {
 const submit=()=>{
     axios.post(process.env.REACT_APP_BASE_URL + '/login/login.php',inputData)
     .then((response)=>{
-        setLoggedIn(true)
+
+
         const options = {
             // httpOnly: true, //TODO im Online Betrieb auskommentieren
             //secure: true,
             path:'/',
             expires: new Date(Date.now() +  1000*60*60*5)
         }
+
         cookies.set("token",response.data)
         navigate('/dashboard')
     })
@@ -47,7 +48,7 @@ return (
                 <h1 className="text-2xl font-bold text-blue-600  text-center">Please enter youre Username and Password</h1>
                     <input className="rounded-2xl placeholder:pl-3 " type="text" placeholder='Username' onChange={inputListener} name="user"/>
                     <input className="rounded-2xl placeholder:pl-3 mb-5" type="password" placeholder='Password' onChange={inputListener} name="password"/>
-                <button className="btn btn-green " onClick={()=>submit()} >Login</button>
+                    <button  className="btn btn-green " onClick={()=>submit()} >Login</button>
             </Card>
         </div>
     </div>

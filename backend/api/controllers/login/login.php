@@ -17,7 +17,7 @@ function userLogin () {
         $db_pass=$result[0]['user_password'];
         $verified = password_verify($obj->password,$db_pass);
         if($verified){
-            $payload = ['vorname'=>$result[0]['first_name'],'nachname'=>$result[0]["last_name"],'email'=>$result[0]['mail'],"looged_in"=>"true"];
+            $payload = ['vorname'=>$result[0]['first_name'],'nachname'=>$result[0]["last_name"],'email'=>$result[0]['mail']];
             $jwt = JWT::generate_jwt($payload);
             echo json_encode($jwt);
             http_response_code(200);
@@ -30,6 +30,7 @@ function userLogin () {
         http_response_code(500);
     }
 }
+
 
 $api = new RestApi('checkUserLogin','userLogin');
 ?>

@@ -8,7 +8,7 @@ function NavbarElement(props) {
 
   
   const [userData, setUserData]= useState({user:'',email:''})
-  const [userAvatar,setUserAvatar] = useState('url') 
+  const [userAvatar,setUserAvatar] = useState('https://keskincoding.de/bilder/profil-pic.jpg') 
 
   const  logout =()=>{
     console.log('ausloggen')
