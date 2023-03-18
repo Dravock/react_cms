@@ -7,13 +7,15 @@
             module.exports = {
             content: [
                 "./src/**/*.{js,jsx,ts,tsx}",
+                './node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
             ],
             theme: {
                 extend: {},
             },
-            plugins: [],
+            plugins: [
+                require('flowbite/plugin')
+            ],
             }
-
         4. Open index.css and paste into first Line:
             @tailwind base;
             @tailwind components;
@@ -21,7 +23,7 @@
         5. npm run start
 
 **** INSTALL NPM MODULES ****
-    npm i axios universal-cookie react-router react-router-dom dotenv react-draft-wysiwyg
+    npm i axios universal-cookie react-router react-router-dom dotenv react-draft-wysiwyg flowbite flowbite-react --save @fortawesome/fontawesome-svg-core i --save @fortawesome/free-solid-svg-icons i --save @fortawesome/free-regular-svg-icons --save @fortawesome/react-fontawesome@latest
 
 **** USAGE React Browser Router ****
     *** Implentation BrowserRouter ***
