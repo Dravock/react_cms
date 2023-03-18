@@ -3,6 +3,7 @@ require_once(API_ROOT . "/config.php");
 
 class JWT {
     private static $expirationHours = 5;
+    private $secret;
 
     private static function base64url_encode($str) {
         return rtrim(strtr(base64_encode($str), '+/', '-_'), '=');

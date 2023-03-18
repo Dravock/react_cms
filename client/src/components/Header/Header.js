@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-function Header() {
+function Header(props) {
+  const {loggedIn,setLoggedIn} = props
+  
   const navigate = useNavigate()
-
-  const [loggedIn, setLoggedIn] = useState(false);
 
   const pageHandler =(pageUrl)=>{
     navigate(pageUrl)

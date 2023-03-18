@@ -1,13 +1,8 @@
 <?php 
 require_once("../../base/start.php");
 require_once(API_ROOT . "/controllers/login/login.query.php");
-require_once(API_ROOT . "/base/jwt.php");
 
-function checkUserLogin(){
-    AuthMiddleware::checkAuth();
-}
-
-function userLogin () {
+function create_new_user () {
     try {
         $post_json  = file_get_contents('php://input');
         $obj = json_decode($post_json);
@@ -17,8 +12,7 @@ function userLogin () {
         $db_pass=$result[0]['user_password'];
         $verified = password_verify($obj->password,$db_pass);
         if($verified){
-            $payload = ['vorname'=>$result[0]['first_name'],'nachname'=>$result[0]["last_name"],'email'=>$result[0]['mail'],"looged_in"=>"true"];
-            $jwt = JWT::generate_jwt($payload);
+            $jwt = JWT::generate_jwt(['vorname'=>$result[0]['firstname']]);
             echo json_encode($jwt);
             http_response_code(200);
             return;
@@ -31,5 +25,5 @@ function userLogin () {
     }
 }
 
-$api = new RestApi('checkUserLogin','userLogin');
+$api = new RestApi(null,'create_new_user');
 ?>

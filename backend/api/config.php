@@ -10,7 +10,7 @@
 		public static $secret = 'ich_bin_sehr_geheim';
         
         // Tabellennamen
-        public static $userTable = 'user';
+        public static $userTable = 'react_cms_user';
         public static $orderTable = 'orders';
         public static $timesTable = 'times';
         public static $customerTable = 'customer';

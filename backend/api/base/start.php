@@ -21,7 +21,6 @@ error_reporting(E_ALL);
 
 // ===========================================================
 define("ROOT", dirname(dirname(dirname(__FILE__))));
-define("CSV_ROOT", dirname(dirname(__FILE__)));
 define("API_ROOT", dirname(dirname(__FILE__)));
 
 
