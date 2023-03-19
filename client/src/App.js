@@ -8,9 +8,11 @@ import Login from './Pages/public/Login';
 import Main from './Pages/public/Main';
 import SignUp from './Pages/public/SignUp';
 
+
 // START CODE
 function App() {
-  return (<>
+return (
+  <>
     <BrowserRouter basename='/react-cms'>
       <Routes>
           <Route path='/' element={<Main />} />
@@ -20,11 +22,8 @@ function App() {
           
           {/* Logged IN PAGES */}
           <Route path='/dashboard' element={<Dashboard />} />
-          
       </Routes>
     </BrowserRouter>
-    </>
-  );
-}
+  </>)}
 
 export default App;

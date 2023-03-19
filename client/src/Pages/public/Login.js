@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie';
 import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Messages from '../../includes/enums/Messages.js';
+import Footer_element from '../../components/Footer_component/Footer_element';
 
 
 
@@ -30,8 +31,8 @@ const submit=()=>{
             path:'/',
             expires: new Date(Date.now() +  1000*60*60*5)
         }
-
         cookies.set("token",response.data)
+        sessionStorage.setItem("logged_in",true)
         navigate('/dashboard')
     })
     .catch((error)=>{
@@ -42,7 +43,7 @@ const submit=()=>{
 return (
 <>
     <Header />
-    <div className="mt-6 flex justify-center items-center flex-col">
+    <div className="mt-6 mb-10 flex justify-center items-center flex-col">
         <div className="md:max-w-lg">
             <Card imgSrc="https://flowbite.com/docs/images/blog/image-1.jpg">
                 <h1 className="text-2xl font-bold text-blue-600  text-center">Please enter youre Username and Password</h1>
@@ -52,6 +53,7 @@ return (
             </Card>
         </div>
     </div>
+    <Footer_element />
 </>)}
 
 export default Login

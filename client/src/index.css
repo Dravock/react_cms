@@ -1,3 +1,5 @@
+/* BASE CSS IMPORT */
+@import "includes/css/base.css"; 
 
 /* IMPORT TAILWIND */
 @tailwind base;
@@ -9,6 +11,7 @@
   /* BODY STYLING */
   body{
     background-color: rgba(0, 0, 0, 0.767);
+    min-height: 85vh; 
   }
 
   hr.dashed{

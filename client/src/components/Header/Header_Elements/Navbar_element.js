@@ -1,30 +1,35 @@
 import React, { useState } from 'react'
 import { Avatar, Dropdown, Navbar } from 'flowbite-react'
+import { useNavigate } from 'react-router-dom'
 
 
 
 function NavbarElement(props) {
-  const {pageHandler,loggedIn,setLoggedIn} = props
+  const {pageHandler} = props
 
-  
+  const navigate = useNavigate()
+
+  const [logged_in,setLogged_In]= useState(sessionStorage.getItem("logged_in"))
   const [userData, setUserData]= useState({user:'',email:''})
   const [userAvatar,setUserAvatar] = useState('https://keskincoding.de/bilder/profil-pic.jpg') 
 
   const  logout =()=>{
-    console.log('ausloggen')
-    setLoggedIn(false)
+    sessionStorage.removeItem("logged_in")
+    navigate('/')
   }
 
+
+
 return (
-    <Navbar fluid={true} rounded={true}>
+    <Navbar fluid={true} rounded={true} className="bg-red-500">
       <Navbar.Brand >
           <img src="https://flowbite.com/docs/images/logo.svg" className="mr-3 h-6 sm:h-9 cursor-pointer" alt="company Logo"  onClick={()=>pageHandler('/')}/>
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white cursor-default" >React - CMS</span>
       </Navbar.Brand>
 
-        {loggedIn ? 
+        {logged_in ? 
         <div className="flex md:order-2">
-          <Dropdown arrowIcon={false} inline={true} label={ <Avatar alt="User settings" img={userAvatar}rounded={true}/> }>
+          <Dropdown arrowIcon={false} inline={true} label={ <Avatar alt="User settings" img={userAvatar}rounded={true} className="test"/> }>
             <Dropdown.Header>
               <span className="block text-sm "> Bonnie Green </span>
               <span className="block truncate text-sm font-medium"> name@flowbite.com </span>
@@ -47,11 +52,11 @@ return (
 }
 
         <Navbar.Collapse>
-          <Navbar.Link  active={true} > <button onClick={()=>pageHandler('/')}> Home</button></Navbar.Link>
-          <Navbar.Link active={false}><button onClick={()=>pageHandler('/')}>About</button></Navbar.Link>
-          <Navbar.Link ><button onClick={()=>pageHandler('/')}>Services</button></Navbar.Link>
-          <Navbar.Link ><button onClick={()=>pageHandler('/')}>Pricing</button></Navbar.Link>
-          <Navbar.Link ><button onClick={()=>pageHandler('/')}>Contact</button></Navbar.Link>
+          <Navbar.Link  active={true} className="hover-underline-animation"> <button onClick={()=>pageHandler('/')}> Home</button></Navbar.Link>
+          <Navbar.Link active={false} className="hover-underline-animation"><button onClick={()=>pageHandler('/')}>About</button></Navbar.Link>
+          <Navbar.Link className="hover-underline-animation"><button onClick={()=>pageHandler('/')}>Services</button></Navbar.Link>
+          <Navbar.Link className="hover-underline-animation"><button onClick={()=>pageHandler('/')}>Pricing</button></Navbar.Link>
+          <Navbar.Link className="hover-underline-animation"><button onClick={()=>pageHandler('/')}>Contact</button></Navbar.Link>
         </Navbar.Collapse>
     </Navbar>
 )}
