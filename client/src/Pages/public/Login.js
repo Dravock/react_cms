@@ -23,19 +23,24 @@ const inputListener = (e) => {
 const submit=()=>{
     axios.post(process.env.REACT_APP_BASE_URL + '/login/login.php',inputData)
     .then((response)=>{
-
-
+        console.log('komme in den response 1')
         const options = {
             // httpOnly: true, //TODO im Online Betrieb auskommentieren
-            //secure: true,
+            // secure: true,
             path:'/',
-            expires: new Date(Date.now() +  1000*60*60*5)
+            expires: new Date(Date.now() +  1000*60*60*5) 
         }
         cookies.set("token",response.data)
-        sessionStorage.setItem("logged_in",true)
-        navigate('/dashboard')
+        sessionStorage.setItem("logged_in",response.data)
+        sessionStorage.setItem("user_data",response.data)
+        console.log('session storage gesetzt ')
+        if(response.data){
+            console.log('bin im navigate')
+            navigate('/dashboard')
+        }
     })
     .catch((error)=>{
+        console.log('hier bin ich')
         alert(Messages.loginFailed.message)
     })
 }

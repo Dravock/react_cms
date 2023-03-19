@@ -19,6 +19,8 @@ function userLogin () {
         if($verified){
             $payload = ['vorname'=>$result[0]['first_name'],'nachname'=>$result[0]["last_name"],'email'=>$result[0]['mail']];
             $jwt = JWT::generate_jwt($payload);
+            $insertData=['id'=>$result[0]['id'],'jwt'=>$jwt];
+            $insert_JWT_to_DB = $query->insertJWT($insertData);
             echo json_encode($jwt);
             http_response_code(200);
             return;

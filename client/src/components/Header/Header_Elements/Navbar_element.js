@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Avatar, Dropdown, Navbar } from 'flowbite-react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 
 
@@ -10,10 +11,11 @@ function NavbarElement(props) {
   const navigate = useNavigate()
 
   const [logged_in,setLogged_In]= useState(sessionStorage.getItem("logged_in"))
-  const [userData, setUserData]= useState({user:'',email:''})
   const [userAvatar,setUserAvatar] = useState('https://keskincoding.de/bilder/profil-pic.jpg') 
 
   const  logout =()=>{
+    axios.delete()
+
     sessionStorage.removeItem("logged_in")
     navigate('/')
   }
@@ -23,7 +25,7 @@ function NavbarElement(props) {
 return (
     <Navbar fluid={true} rounded={true} className="bg-red-500">
       <Navbar.Brand >
-          <img src="https://flowbite.com/docs/images/logo.svg" className="mr-3 h-6 sm:h-9 cursor-pointer" alt="company Logo"  onClick={()=>pageHandler('/')}/>
+          <img src="http://www.keskinsoftwaresolution.de/logos/KeskinCoding.png" className="mr-3 h-6 sm:h-9 cursor-pointer" alt="company Logo"  onClick={()=>pageHandler('/')}/>
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white cursor-default" >React - CMS</span>
       </Navbar.Brand>
 
