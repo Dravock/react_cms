@@ -5,6 +5,10 @@ client/node_modules
 /.pnp
 .pnp.js
 
+#images
+client/src/includes/img/
+client/src/includes/vid/
+
 # testing
 /coverage
 

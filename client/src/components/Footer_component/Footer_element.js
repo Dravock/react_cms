@@ -1,18 +1,18 @@
-import { Footer } from 'flowbite-react'
 import React from 'react'
+import FooterContent from './FooterContent'
 
-function Footer_element() {
-return (
-    <>
-    <Footer container={true}>
-        <Footer.Copyright by="Keskin Software Solution™" year={2023}/>
-        <Footer.LinkGroup>
-            <Footer.Link href="#"> About </Footer.Link>
-            <Footer.Link href="#">Privacy Policy</Footer.Link>
-            <Footer.Link href="#">Licensing</Footer.Link>
-            <Footer.Link href="#">Contact</Footer.Link>
-        </Footer.LinkGroup>
-    </Footer>
-</>)}
 
-export default Footer_element
+const Footer = () => {
+  return (
+    <footer>
+      <div className="footer bg-slate-100" id="footer">
+          <h5 className='text-black font-bold'>Info<i className="fa-sharp fa-regular fa-circle-info"></i></h5>
+          <div id="footerContent">
+              <FooterContent />
+          </div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer

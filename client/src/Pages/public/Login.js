@@ -58,8 +58,15 @@ return (
         <div className="md:max-w-lg">
             <Card imgSrc="https://flowbite.com/docs/images/blog/image-1.jpg">
                 <h1 className="text-2xl font-bold text-blue-600  text-center">Please enter youre Username and Password</h1>
-                    <input className="rounded-2xl placeholder:pl-3 " type="text" placeholder='Username' onChange={inputListener} name="user"/>
-                    <input className="rounded-2xl placeholder:pl-3 mb-5" type="password" placeholder='Password' onChange={inputListener} name="password"/>
+                <div className="relative">
+                    <input type="text" id="user_name" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  onChange={inputListener} name="user" />
+                    <label for="user_name" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">username</label>
+                </div>
+
+                <div className="relative">
+                    <input type="password" id="user_password" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " onChange={inputListener} name="password" />
+                    <label for="user_password" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">password</label>
+                </div>
                     <button  className="btn btn-green " onClick={()=>submit()} >Login</button>
             </Card>
         </div>

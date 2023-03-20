@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Avatar, Dropdown, Navbar } from 'flowbite-react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -9,21 +9,78 @@ function NavbarElement(props) {
   const {pageHandler} = props
 
   const navigate = useNavigate()
-
+  const path =window.location.href.slice(32)
+  const [link_active,setLink_active]=useState(
+    {
+      home:true,
+      about:false,
+      services:false,
+      price:false,
+      contactUs:false
+    }
+  )
   const [logged_in,setLogged_In]= useState(sessionStorage.getItem("logged_in"))
   const [userAvatar,setUserAvatar] = useState('https://keskincoding.de/bilder/profil-pic.jpg') 
 
   const  logout =()=>{
-    axios.delete()
-
     sessionStorage.removeItem("logged_in")
     navigate('/')
   }
 
+  useEffect(() => {
+    switch (path) {
+      case 'home':
+        setLink_active({home:true,
+                        about:false,
+                        services:false,
+                        price:false,
+                        contaktUs:false
+                      })
+        break;
+      case 'about-us':
+        setLink_active({home:false,
+                        about:true,
+                        services:false,
+                        price:false,
+                        contactUs:false
+                      })
+        break;
+      case 'services':
+        setLink_active({home:false,
+                        about:false,
+                        services:true,
+                        price:false,
+                        contactUs:false
+                      })
+        break;
+      case 'pricing':
+        setLink_active({home:false,
+                        about:false,
+                        services:false,
+                        price:true,
+                        contakcUs:false
+                      })
+        break;
+      case 'contact-us':
+        setLink_active({home:false,
+                        about:false,
+                        services:false,
+                        price:false,
+                        contakcUs:true
+                      })
+        break;
+    
+      default:
+        break;
+    }
+  }, [path])
+  
+  
 
+console.log(link_active)
 
 return (
-    <Navbar fluid={true} rounded={true} className="bg-red-500">
+    <Navbar fluid={true} rounded={false} className="bg-red-500">
       <Navbar.Brand >
           <img src="http://www.keskinsoftwaresolution.de/logos/KeskinCoding.png" className="mr-3 h-6 sm:h-9 cursor-pointer" alt="company Logo"  onClick={()=>pageHandler('/')}/>
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white cursor-default" >React - CMS</span>
@@ -54,11 +111,11 @@ return (
 }
 
         <Navbar.Collapse>
-          <Navbar.Link  active={true} className="hover-underline-animation"> <button onClick={()=>pageHandler('/')}> Home</button></Navbar.Link>
-          <Navbar.Link active={false} className="hover-underline-animation"><button onClick={()=>pageHandler('/')}>About</button></Navbar.Link>
-          <Navbar.Link className="hover-underline-animation"><button onClick={()=>pageHandler('/')}>Services</button></Navbar.Link>
-          <Navbar.Link className="hover-underline-animation"><button onClick={()=>pageHandler('/')}>Pricing</button></Navbar.Link>
-          <Navbar.Link className="hover-underline-animation"><button onClick={()=>pageHandler('/')}>Contact</button></Navbar.Link>
+          <Navbar.Link active={link_active.home} className="hover-underline-animation "><button onClick={()=>pageHandler('/')} className="text-black font-bold"> Home</button></Navbar.Link>
+          <Navbar.Link active={link_active.about} className="hover-underline-animation "><button onClick={()=>pageHandler('/about-us')} className="text-black font-bold">About</button></Navbar.Link>
+          <Navbar.Link active={link_active.services} className="hover-underline-animation "><button onClick={()=>pageHandler('/services')} className="text-black font-bold">Services</button></Navbar.Link>
+          <Navbar.Link active={link_active.price} className="hover-underline-animation "><button onClick={()=>pageHandler('/pricing')} className="text-black font-bold">Pricing</button></Navbar.Link>
+          <Navbar.Link active={link_active.contactUs} className="hover-underline-animation "><button onClick={()=>pageHandler('/contact-us')} className="text-black font-bold">Contact</button></Navbar.Link>
         </Navbar.Collapse>
     </Navbar>
 )}

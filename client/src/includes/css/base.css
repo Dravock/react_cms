@@ -1,27 +1,31 @@
-/* UNDERLINE HOVER EFFECT */
-    .hover-underline-animation {
-        display: inline-block;
-        position: relative;
-        color: #0087ca;
-    }
+h1{
+    @apply
+        text-3xl;
+}
 
-    .hover-underline-animation::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: #0087ca;
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-    }
+h3{
+    @apply
+        text-8xl;
+}
 
-    .hover-underline-animation:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(68, 65, 65);
+    color: black;
+    text-align: center;
     }
-
-/* ROTATE ANIMATION */
     
+    #footer #footerContent {
+        max-height: 0;
+        transition: max-height 0.15s ease-out;
+        overflow: hidden;
+        background: #d5d5d5;
+    }
+    
+    #footer:hover #footerContent {
+        max-height: 500px;
+        transition: max-height 0.25s ease-in;
+    }

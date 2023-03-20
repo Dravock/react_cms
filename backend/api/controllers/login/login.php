@@ -25,7 +25,7 @@ function userLogin () {
             http_response_code(200);
             return;
         }else{
-            throw new Exception("Error Processing Request", 1);
+            throw new Exception("PASSWORD NOT VERIFIED", 1);
         }
         http_response_code(401);
     } catch (Throwable $e) {
