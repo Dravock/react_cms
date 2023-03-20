@@ -6,6 +6,9 @@ import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Messages from '../../includes/enums/Messages.js';
 import Footer_element from '../../components/Footer_component/Footer_element';
+import LoadingScreen from '../../components/loading_spinner/Loadingscreen';
+import LoadingMessages from '../../includes/enums/LoadingMessages';
+import LoadingState from '../../includes/enums/LoadingState';
 
 
 
@@ -14,13 +17,15 @@ function Login(props) {
     const navigate = useNavigate()
 
     const [inputData,setInputData]=useState()
-    
+    const [loading,setLoading] = useState(LoadingState.Inactive)
+
 const inputListener = (e) => {
     const {name,value}=e.target
     setInputData({...inputData,[name]:value})
 }
 
 const submit=()=>{
+    setLoading(LoadingState.Active)
     axios.post(process.env.REACT_APP_BASE_URL + '/login/login.php',inputData)
     .then((response)=>{
         console.log('komme in den response 1')
@@ -32,10 +37,10 @@ const submit=()=>{
         }
         cookies.set("token",response.data)
         sessionStorage.setItem("logged_in",response.data)
-        sessionStorage.setItem("user_data",response.data)
+        // sessionStorage.setItem("user_data",response.data)
         console.log('session storage gesetzt ')
         if(response.data){
-            console.log('bin im navigate')
+            
             navigate('/dashboard')
         }
     })
@@ -43,10 +48,11 @@ const submit=()=>{
         console.log('hier bin ich')
         alert(Messages.loginFailed.message)
     })
+    setLoading(LoadingState)
 }
 
 return (
-<>
+<> {loading === LoadingState.Active && <LoadingScreen text={LoadingMessages.GeneralWaiting}/>}
     <Header />
     <div className="mt-6 mb-10 flex justify-center items-center flex-col">
         <div className="md:max-w-lg">

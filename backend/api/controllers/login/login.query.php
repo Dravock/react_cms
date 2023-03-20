@@ -24,8 +24,9 @@ class UserLogin extends Database{
     public function insertJWT($obj){
         $id=$obj['id'];
         $jwt =$obj['jwt'];
-        $stmt = $this->conn->prepare( "INSERT INTO $this->userJWT (id,jwt) VALUES ('$id','$jwt')");
-        // $stmt = $this->conn->prepare( "INSERT INTO $this->userJWT ('id','jwt') VALUES ('$obj->id','$obj->jwt')");
+
+        // $stmt = $this->conn->prepare( "INSERT INTO $this->userJWT (id,jwt) VALUES ('$id','')");
+        $stmt = $this->conn->prepare( "UPDATE $this->userJWT SET jwt = '$jwt' WHERE id = $id " );
         return  $stmt->execute();
     }
 

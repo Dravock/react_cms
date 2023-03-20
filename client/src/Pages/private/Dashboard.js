@@ -17,7 +17,6 @@ useEffect(() => {
     (async()=>{
         try{
         setLoading(LoadingState.Active)
-        
         await Validation()
         setLoading(LoadingState.Inactive)
         } catch (error) {
@@ -31,7 +30,7 @@ return (
     <div>
         {loading === LoadingState.Active && <LoadingScreen text={LoadingMessages.GeneralWaiting}/>}
         <Header />
-        <div className='md:container md:mx-auto border bg-slate-400'>
+        <div className='container md:mx-auto border bg-slate-400'>
             <h1>Dashboard</h1>
         </div>
     </div>)}
