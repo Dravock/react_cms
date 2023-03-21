@@ -1,6 +1,7 @@
 /* BASE AND CUSTOM CSS IMPORT */
 @import "includes/css/base.css"; 
 @import "includes/css/custom/footer.css"; 
+@import "includes/css/custom/heroBanner.css"; 
 
 /* IMPORT TAILWIND */
 @tailwind base;

@@ -2,6 +2,9 @@
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer_element from './components/Footer_component/Footer_element'
+import HeroBanner from './components/HeroBanner/HeroBanner';
+import background from './includes/img/jpeg/AdobeStock_569605271.jpeg'
+
 // IMPORT DER PAGES JS DATEIN
 import Content_Page from './Pages/public/Content_Page';
 import Dashboard from './Pages/private/Dashboard';
@@ -22,7 +25,14 @@ return (
   <>
     <BrowserRouter basename='/react-cms'>
       <Header />
+      <HeroBanner background={background} height={600}/>
       <Footer_element />
+
+
+
+
+
+      {/* REACT ROUTER ROUTES */}
       <Routes>
           {/* PUBLIC PAGES */}
           <Route path='/' element={<Main />} />

@@ -2,8 +2,8 @@
 
     /* BODY AND GENERAL STYLING*/
         body{
-            background-color: rgba(0, 0, 0, 0.767);
-            min-height: 85vh; 
+            @apply bg-gray-700;
+
         }
 
         hr.dashed{

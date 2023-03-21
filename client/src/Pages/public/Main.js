@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom' 
-import Footer_element from '../../components/Footer_component/Footer_element'
-import Header from '../../components/Header/Header'
 import img1 from '../../includes/img/jpeg/AdobeStock_208552722.jpeg'
 
 
@@ -20,11 +18,13 @@ function Main() {
 // JSX RETURN BLOCK
 return (
     <>
-        <div className="App">
-                <div className='bg-slate-300 text-center md:m-20 border'>
-                    <h1 className='md:text-5xl mt-10 font-bold'>React Content Managment System</h1>
-                    <img className="aspect-video scale-y-75" src={img1} alt="mainpage first img"></img>
-                    <p className='text-justify m-10 pb-16'>
+        <div className="container md:my-3 mx-auto App">
+            <div className='bg-slate-300 text-center border'>
+                <h1 className='md:text-3xl mt-5 font-bold'>React Content Managment System</h1>
+                    <div className=''>
+                        <img className="aspect-[24/8] w-full" src={img1} alt="mainpage first img" />
+                    </div>
+                    <p className='text-justify pb-16'>
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
                         Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
                         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
@@ -35,7 +35,7 @@ return (
                     </p>
                     <button className='btn btn-green' onClick={()=>start_cms()}>Click to Start </button>
                 </div>
-        </div>
+            </div>
     </>
 )}
 

@@ -20,51 +20,57 @@ const FooterContent = () => {
     }
 
 return (
-    <div className="bg-slate-700 z-10">
-        <div className="grid grid-cols-6 gap-4 m-auto">
-            <ul></ul>
+    <div className="container mx-auto text-center mt-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4">
             <ul className='text-justify'>
-                <h3 className='underline text-2xl text-justify text-slate-300'>Social-Media</h3>
+                <h3 className='underline text-lg '>Social-Media</h3>
                 <div >
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation text-slate-200'>facebook</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation text-slate-200'>Instagram</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation text-slate-200'>Youtube</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation text-slate-200'>Twitter</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation '>facebook</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation '>Instagram</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation '>Youtube</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation '>Twitter</a></li>
                 </div>
             </ul>
             <ul className='text-justify'>
-                <h3 className='underline text-justify text-2xl text-slate-300'>About</h3>
+                <h3 className='underline text-lg '>About</h3>
                 <div>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>facebook</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>Instagram</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>Youtube</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>Twitter</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>facebook</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Instagram</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Youtube</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Twitter</a></li>
                 </div>
             </ul>
 
 
             <ul className='text-justify'>
-                <h3 className='underline text-justify text-2xl text-slate-300'>Karriere</h3>
+                <h3 className='underline text-lg '>Karriere</h3>
                 <div>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>facebook</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>Instagram</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>Youtube</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>Twitter</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>facebook</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Instagram</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Youtube</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Twitter</a></li>
                 </div>
             </ul>
             <ul className='text-justify'>
-                <h3 className='underline text-justify text-2xl text-slate-300'>Links</h3>
+                <h3 className='underline  text-lg '>Links</h3>
                 <div>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>facebook</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>Instagram</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>Youtube</a></li>
-                    <li><a href='https://www.facebook.de' className='cursor-pointer font-bold text-sm hover-underline-animation'>Twitter</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>facebook</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Instagram</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Youtube</a></li>
+                    <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Twitter</a></li>
                 </div>
             </ul>
-            <ul></ul>
         </div>
-        <p className='text-center mt-3'><span className='cursor-pointer hover-underline-animation font-bold' onClick={()=>impr_datenSchu('a')}>Impressum </span> <span className='font-bold'>|| </span> <span className='cursor-pointer hover-underline-animation font-bold' onClick={()=>impr_datenSchu('b')}>Datenschutz</span></p>
-        <h5 className='justify-end text-lg font-bold text-white '> © Keskin Software Solution</h5>
+        <div className='mt-5'>
+            <p className='text-center mt-3'>
+                <span className='hover-underline-animation company-privacy-contract' onClick={()=>impr_datenSchu('a')}>Impressum </span> 
+                    <span className='font-bold'>
+                        || 
+                    </span> 
+                <span className='hover-underline-animation company-privacy-contract' onClick={()=>impr_datenSchu('b')}>Datenschutz</span>
+            </p>
+            <h5 className='justify-end company-copyright '> © Keskin Software Solution</h5>
+        </div>
     </div>
     )
 }

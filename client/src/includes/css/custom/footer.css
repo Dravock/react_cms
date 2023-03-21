@@ -1,20 +1,44 @@
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background-color: rgb(68, 65, 65);
-    color: black;
-    text-align: center;
+    @apply fixed;
+    @apply left-0;
+    @apply bottom-0;
+    @apply bg-purple-600;
+    @apply text-green-600;
+    @apply justify-center;
+    @apply text-center;
+    @apply w-full;
     }
     
-    #footer #footerContent {
-        max-height: 0;
+    #footer #footer-content {
+        @apply max-h-0;
+        @apply bg-black;
+        @apply overflow-hidden;
         transition: max-height 0.15s ease-out;
-        overflow: hidden;
-        background: #d5d5d5;
     }
     
-    #footer:hover #footerContent {
-        max-height: 500px;
+    #footer:hover #footer-content {
+        @apply max-h-[1700px];
         transition: max-height 0.25s ease-in;
     }
+
+    .link-decoration{
+        @apply cursor-pointer ;
+        @apply font-bold ;
+        @apply text-sm ;
+        @apply text-pink-700 ;
+    }
+
+    .company-privacy-contract{
+        @apply cursor-pointer ;
+        @apply font-bold ;
+        @apply text-base ;
+        @apply text-lime-500 ;
+    }
+
+    .company-copyright{
+        @apply cursor-pointer ;
+        @apply font-bold ;
+        @apply text-lg ;
+        @apply text-rose-300 ;
+    }
+    
