@@ -21,7 +21,6 @@ function Main() {
 return (
     <>
         <div className="App">
-            <Header />
                 <div className='bg-slate-300 text-center md:m-20 border'>
                     <h1 className='md:text-5xl mt-10 font-bold'>React Content Managment System</h1>
                     <img className="aspect-video scale-y-75" src={img1} alt="mainpage first img"></img>
@@ -36,7 +35,6 @@ return (
                     </p>
                     <button className='btn btn-green' onClick={()=>start_cms()}>Click to Start </button>
                 </div>
-            <Footer_element />
         </div>
     </>
 )}

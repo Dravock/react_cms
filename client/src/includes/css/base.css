@@ -1,31 +1,68 @@
-h1{
-    @apply
-        text-3xl;
-}
+/* CSS STYLINGS */
 
-h3{
-    @apply
-        text-8xl;
-}
+    /* BODY AND GENERAL STYLING*/
+        body{
+            background-color: rgba(0, 0, 0, 0.767);
+            min-height: 85vh; 
+        }
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(68, 65, 65);
-    color: black;
-    text-align: center;
+        hr.dashed{
+            border: 1px dashed rgb(128, 94, 0);
+            border-radius: 5px;
+        }
+
+        h1{
+            @apply
+                text-3xl;
+        }
+        
+        h3{
+            @apply
+                text-8xl;
+        }
+
+  /* BUTTON STYLING */
+    .btn {
+        @apply  
+        text-white 
+        font-bold 
+        py-2 
+        px-4 
+        rounded-sm 
+        mb-12;
     }
-    
-    #footer #footerContent {
-        max-height: 0;
-        transition: max-height 0.15s ease-out;
-        overflow: hidden;
-        background: #d5d5d5;
+
+    .btn-green {
+        @apply 
+        bg-green-500 
+        hover:bg-green-700;
     }
-    
-    #footer:hover #footerContent {
-        max-height: 500px;
-        transition: max-height 0.25s ease-in;
+
+    .btn-blue:hover {
+        @apply bg-blue-700;
+    }
+
+  /* UNDERLINE HOVER EFFECT */
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+    }
+
+    .hover-underline-animation::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0087ca;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
     }

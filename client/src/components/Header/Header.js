@@ -17,7 +17,7 @@ function Header(props) {
 return (
   <div>
     <NavbarElement  pageHandler={pageHandler} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
-    <BreadcrumbElement pageHandler={pageHandler}/>
+    {/* <BreadcrumbElement pageHandler={pageHandler}/> */}
   </div>
   )
 }

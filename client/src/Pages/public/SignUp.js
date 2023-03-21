@@ -3,8 +3,7 @@ import { Card } from 'flowbite-react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Messages from '../../includes/enums/Messages'
-import Header from '../../components/Header/Header'
-import Footer_element from '../../components/Footer_component/Footer_element'
+
 
 function SignUp() {
     const navigate = useNavigate()
@@ -28,7 +27,6 @@ const submit=()=>{
 
 return (
     <>
-        <Header />
         <div className="mt-6 mb-10 flex justify-center items-center flex-col">
             <div className="md:max-w">
                 <Card imgSrc="https://flowbite.com/docs/images/blog/image-1.jpg">
@@ -53,12 +51,12 @@ return (
                         </section>
                     </div>
                     <div className="text-center">
-                        <button className="text-center btn btn-green w-32" onClick={()=>submit} >Sign Up</button>
+                        <button className="text-center btn btn-green md:w-32 w-" onClick={()=>submit} >Sign Up</button>
                     </div>
                 </Card>
             </div>
         </div>
-        <Footer_element />
+
     </>)}
 
 export default SignUp

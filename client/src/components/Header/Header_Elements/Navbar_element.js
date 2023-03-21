@@ -75,7 +75,7 @@ function NavbarElement(props) {
     }
   }, [path])
   
-  
+  console.log(link_active)
 
 console.log(link_active)
 
@@ -111,11 +111,11 @@ return (
 }
 
         <Navbar.Collapse>
-          <Navbar.Link active={link_active.home} className="hover-underline-animation "><button onClick={()=>pageHandler('/')} className="text-black font-bold"> Home</button></Navbar.Link>
-          <Navbar.Link active={link_active.about} className="hover-underline-animation "><button onClick={()=>pageHandler('/about-us')} className="text-black font-bold">About</button></Navbar.Link>
-          <Navbar.Link active={link_active.services} className="hover-underline-animation "><button onClick={()=>pageHandler('/services')} className="text-black font-bold">Services</button></Navbar.Link>
-          <Navbar.Link active={link_active.price} className="hover-underline-animation "><button onClick={()=>pageHandler('/pricing')} className="text-black font-bold">Pricing</button></Navbar.Link>
-          <Navbar.Link active={link_active.contactUs} className="hover-underline-animation "><button onClick={()=>pageHandler('/contact-us')} className="text-black font-bold">Contact</button></Navbar.Link>
+          <Navbar.Link className="hover-underline-animation "><button onClick={()=>pageHandler('/')} className="text-black font-bold"> Home</button></Navbar.Link>
+          <Navbar.Link className="hover-underline-animation "><button onClick={()=>pageHandler('/about-us')} className="text-black font-bold">About</button></Navbar.Link>
+          <Navbar.Link className="hover-underline-animation "><button onClick={()=>pageHandler('/services')} className="text-black font-bold">Services</button></Navbar.Link>
+          <Navbar.Link className="hover-underline-animation "><button onClick={()=>pageHandler('/pricing')} className="text-black font-bold">Pricing</button></Navbar.Link>
+          <Navbar.Link className="hover-underline-animation "><button onClick={()=>pageHandler('/contact-us')} className="text-black font-bold">Contact</button></Navbar.Link>
         </Navbar.Collapse>
     </Navbar>
 )}

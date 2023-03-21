@@ -20,7 +20,7 @@ const FooterContent = () => {
     }
 
 return (
-    <div className="bg-slate-700">
+    <div className="bg-slate-700 z-10">
         <div className="grid grid-cols-6 gap-4 m-auto">
             <ul></ul>
             <ul className='text-justify'>

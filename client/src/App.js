@@ -1,6 +1,7 @@
-// OTHER STUFF
+// IMPORTS FOR WEBSITE DESIGN
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-
+import Header from './components/Header/Header';
+import Footer_element from './components/Footer_component/Footer_element'
 // IMPORT DER PAGES JS DATEIN
 import Content_Page from './Pages/public/Content_Page';
 import Dashboard from './Pages/private/Dashboard';
@@ -13,11 +14,15 @@ import Pricing from './Pages/public/Pricing';
 import Contact_Us from './Pages/public/Contact_Us';
 
 
+
+
 // START CODE
 function App() {
 return (
   <>
     <BrowserRouter basename='/react-cms'>
+      <Header />
+      <Footer_element />
       <Routes>
           {/* PUBLIC PAGES */}
           <Route path='/' element={<Main />} />
