@@ -6,7 +6,8 @@
     @apply text-green-600;
     @apply justify-center;
     @apply text-center;
-    @apply w-full;
+    @apply sm:min-w-full;
+    @apply w-full
     }
     
     #footer #footer-content {
