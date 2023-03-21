@@ -20,20 +20,20 @@ const FooterContent = () => {
     }
 
 return (
-    <div className="container mx-auto text-center mt-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4">
-            <ul className='text-justify'>
+    <div className="container mx-auto mt-4">
+        <div className="grid md:grid-cols-1 justify-center lg:grid-cols-4">
+            <ul className='text-center'>
                 <h3 className='underline text-lg '>Social-Media</h3>
-                <div >
+                <div className=''>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation '>facebook</a></li>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation '>Instagram</a></li>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation '>Youtube</a></li>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation '>Twitter</a></li>
                 </div>
             </ul>
-            <ul className='text-justify'>
+            <ul className='text-center '>
                 <h3 className='underline text-lg '>About</h3>
-                <div>
+                <div className=''>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>facebook</a></li>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Instagram</a></li>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Youtube</a></li>
@@ -42,18 +42,18 @@ return (
             </ul>
 
 
-            <ul className='text-justify'>
+            <ul className='text-center'>
                 <h3 className='underline text-lg '>Karriere</h3>
-                <div>
+                <div className='text-center'>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>facebook</a></li>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Instagram</a></li>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Youtube</a></li>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Twitter</a></li>
                 </div>
             </ul>
-            <ul className='text-justify'>
+            <ul className='text-center'>
                 <h3 className='underline  text-lg '>Links</h3>
-                <div>
+                <div className='text-center'>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>facebook</a></li>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Instagram</a></li>
                     <li><a href='https://www.facebook.de' className='link-decoration hover-underline-animation'>Youtube</a></li>
