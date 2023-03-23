@@ -12,7 +12,4 @@
         // Tabellennamen
         public static $userTable = 'react_cms_user';
         public static $userJWT = 'react_cms_jwt';
-        public static $timesTable = 'times';
-        public static $customerTable = 'customer';
-        public static $wpTable = 'working_project';
     }
