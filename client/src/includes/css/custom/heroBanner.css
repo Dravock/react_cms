@@ -2,7 +2,7 @@
     background-position: center;
     background-size: cover; 
     background-repeat: no-repeat;
-    min-height: 180px;
+    min-height: 100px;
 }
 
 @media only screen and (min-width: 768px){
@@ -10,6 +10,6 @@
         background-position: center;
         background-size: cover; 
         background-repeat: no-repeat;
-        min-height: 450px;
+        min-height: 250px;
     }
 }

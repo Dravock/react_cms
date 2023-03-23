@@ -1,88 +1,53 @@
 import React, { useEffect, useState } from 'react'
 import { Avatar, Dropdown, Navbar } from 'flowbite-react'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import Capitalize_First_Letter from '../../../functions/Capitalize_First_Letter'
+import { Validation } from '../../../functions/Validation'
+import Cookies from 'universal-cookie'
 
 
 
 function NavbarElement(props) {
   const {pageHandler} = props
-
   const navigate = useNavigate()
-  const path =window.location.href.slice(32)
-  const [link_active,setLink_active]=useState(
-    {
-      home:true,
-      about:false,
-      services:false,
-      price:false,
-      contactUs:false
-    }
-  )
-  const [logged_in,setLogged_In]= useState(sessionStorage.getItem("logged_in"))
-  const [userAvatar,setUserAvatar] = useState('https://keskincoding.de/bilder/profil-pic.jpg') 
+  const cookies = new Cookies()
 
-  const  logout =()=>{
-    sessionStorage.removeItem("logged_in")
-    navigate('/')
-  }
-
-  useEffect(() => {
-    switch (path) {
-      case 'home':
-        setLink_active({home:true,
-                        about:false,
-                        services:false,
-                        price:false,
-                        contaktUs:false
-                      })
-        break;
-      case 'about-us':
-        setLink_active({home:false,
-                        about:true,
-                        services:false,
-                        price:false,
-                        contactUs:false
-                      })
-        break;
-      case 'services':
-        setLink_active({home:false,
-                        about:false,
-                        services:true,
-                        price:false,
-                        contactUs:false
-                      })
-        break;
-      case 'pricing':
-        setLink_active({home:false,
-                        about:false,
-                        services:false,
-                        price:true,
-                        contakcUs:false
-                      })
-        break;
-      case 'contact-us':
-        setLink_active({home:false,
-                        about:false,
-                        services:false,
-                        price:false,
-                        contakcUs:true
-                      })
-        break;
-    
-      default:
-        break;
-    }
-  }, [path])
+  const getURL=window.location.href
+  const name = sessionStorage.getItem('user_name').split(" ")
   
-  console.log(link_active)
 
-console.log(link_active)
+
+  const [logged_in,setLogged_In]= useState(false)
+  const [userAvatar,setUserAvatar] = useState('https://keskincoding.de/bilder/profil-pic.jpg') 
+  
+  useEffect(() => {
+    (async()=>{
+        try{
+          await  Validation()
+            setLogged_In(true)
+        } catch (error) {
+            setLogged_In(false)
+        }
+    })() 
+}, [getURL])
+
+const  logout =()=>{
+  sessionStorage.removeItem("logged_in")
+  cookies.remove('token')
+  setLogged_In(false)
+  navigate('/')
+}
+
+const getUserName = () => {
+  return Capitalize_First_Letter(name)
+}
+
+
 
 return (
-    <Navbar fluid={true} rounded={false} className="bg-red-500">
+    <Navbar fluid={true} rounded={false} className="c">
       <Navbar.Brand >
-          <img src="http://www.keskinsoftwaresolution.de/logos/KeskinCoding.png" className="mr-3 h-6 sm:h-9 cursor-pointer" alt="company Logo"  onClick={()=>pageHandler('/')}/>
+          <img src="http://www.keskinsoftwaresolution.de/logos/KeskinCoding.png" className="mr-3 h-6 sm:h-9 cursor-pointer rounded" alt="company Logo"  onClick={()=>pageHandler('/')}/>
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white cursor-default" >React - CMS</span>
       </Navbar.Brand>
 
@@ -90,10 +55,10 @@ return (
         <div className="flex md:order-2">
           <Dropdown arrowIcon={false} inline={true} label={ <Avatar alt="User settings" img={userAvatar}rounded={true} className="test"/> }>
             <Dropdown.Header>
-              <span className="block text-sm "> Bonnie Green </span>
-              <span className="block truncate text-sm font-medium"> name@flowbite.com </span>
+              <span className="block text-sm "> {getUserName()}</span>
+              <span className="block truncate text-sm font-medium"> {sessionStorage.getItem('user_email')} </span>
             </Dropdown.Header>
-            <Dropdown.Item> <button onClick={()=>pageHandler('/user-dashboard')} className="block text-sm font-medium" >Dashboard</button></Dropdown.Item>
+            <Dropdown.Item> <button onClick={()=>pageHandler('/dashboard')} className="block text-sm font-medium" >Dashboard</button></Dropdown.Item>
             <Dropdown.Item> <button onClick={()=>pageHandler('/user-setting')} className="block text-sm font-medium" >Settings</button></Dropdown.Item>
             <Dropdown.Item> <button onClick={()=>pageHandler('/earnings')} className="block text-sm font-medium" >Earnings</button></Dropdown.Item>
             <Dropdown.Divider />

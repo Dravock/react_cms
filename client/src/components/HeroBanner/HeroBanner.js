@@ -2,11 +2,11 @@ import React from 'react'
 
 
 function HeroBanner(props) {
-    const {background}=props
+    const {backgroundURL}=props
 return (
     <>
-        <div style={{backgroundImage:`url(${background})`}} className="hero-banner" >
-        
+        <div style={{backgroundImage:`url(${backgroundURL})`}} className="hero-banner " >
+            {/* CONTENT FÜR DEN BANNER */}
         </div>
     </>
 )}

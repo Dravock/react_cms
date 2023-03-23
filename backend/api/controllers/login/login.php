@@ -15,13 +15,14 @@ function userLogin () {
         $query = new UserLogin();
         $result = $query->verifyUser($obj);
         $db_pass=$result[0]['user_password'];
-        $verified = password_verify($obj->password,$db_pass);
+        $verified = password_verify($obj->user_password,$db_pass);
         if($verified){
             $payload = ['vorname'=>$result[0]['first_name'],'nachname'=>$result[0]["last_name"],'email'=>$result[0]['mail']];
             $jwt = JWT::generate_jwt($payload);
             $insertData=['id'=>$result[0]['id'],'jwt'=>$jwt];
             $insert_JWT_to_DB = $query->insertJWT($insertData);
-            echo json_encode($jwt);
+            $return_data=['user_name'=>$obj->user_name, 'vorname'=>$result[0]['first_name'],'nachname'=>$result[0]["last_name"],'email'=>$result[0]['mail'],'jwt'=>$jwt];
+            echo json_encode($return_data);
             http_response_code(200);
             return;
         }else{

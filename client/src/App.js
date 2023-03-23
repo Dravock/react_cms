@@ -1,12 +1,12 @@
 // IMPORTS FOR WEBSITE DESIGN
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Header from './components/Header/Header';
-import Footer_element from './components/Footer_component/Footer_element'
+import FooterElement from './components/Footer_component/Footer_element'
 import HeroBanner from './components/HeroBanner/HeroBanner';
 import background from './includes/img/jpeg/AdobeStock_569605271.jpeg'
 
 // IMPORT DER PAGES JS DATEIN
-import Content_Page from './Pages/public/Content_Page';
+import ContentPage from './Pages/public/Content_Page';
 import Dashboard from './Pages/private/Dashboard';
 import Login from './Pages/public/Login';
 import Main from './Pages/public/Main';
@@ -14,7 +14,7 @@ import SignUp from './Pages/public/SignUp';
 import AboutUs from './Pages/public/AboutUs';
 import Services from './Pages/public/Services';
 import Pricing from './Pages/public/Pricing';
-import Contact_Us from './Pages/public/Contact_Us';
+import ContactUs from './Pages/public/Contact_Us';
 
 
 
@@ -25,8 +25,8 @@ return (
   <>
     <BrowserRouter basename='/react-cms'>
       <Header />
-      <HeroBanner background={background} height={600}/>
-      <Footer_element />
+      <HeroBanner backgroundURL={background} height={600}/>
+      <FooterElement />
 
 
 
@@ -36,11 +36,11 @@ return (
       <Routes>
           {/* PUBLIC PAGES */}
           <Route path='/' element={<Main />} />
-          <Route path='/show-content' element={<Content_Page />} />
+          <Route path='/show-content' element={<ContentPage />} />
           <Route path='/services' element={<Services />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/pricing' element={<Pricing />} />
-          <Route path='/contact-us' element={<Contact_Us />} />
+          <Route path='/contact-us' element={<ContactUs />} />
           
           
 

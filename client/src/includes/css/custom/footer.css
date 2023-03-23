@@ -2,8 +2,9 @@
     @apply fixed;
     @apply left-0;
     @apply bottom-0;
-    @apply bg-purple-600;
-    @apply text-green-600;
+    @apply bg-gray-200;
+    @apply text-slate-100;
+    @apply font-bold;
     @apply justify-center;
     @apply text-center;
     @apply sm:min-w-full;
@@ -12,8 +13,8 @@
     
     #footer #footer-content {
         @apply max-h-0;
-        @apply bg-black;
         @apply overflow-hidden;
+        background-color: rgba(0, 0, 0, 0.57);
         transition: max-height 0.15s ease-out;
     }
     
@@ -33,13 +34,13 @@
         @apply cursor-pointer ;
         @apply font-bold ;
         @apply text-base ;
-        @apply text-lime-500 ;
+        @apply text-white ;
     }
 
     .company-copyright{
         @apply cursor-pointer ;
         @apply font-bold ;
         @apply text-lg ;
-        @apply text-rose-300 ;
+        @apply text-white ;
     }
     

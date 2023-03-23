@@ -15,7 +15,7 @@ class UserLogin extends Database{
 
     public function verifyUser($obj){
     
-        $stmt = $this->conn->prepare("SELECT * From $this->userTable where user_name='$obj->user'");
+        $stmt = $this->conn->prepare("SELECT * From $this->userTable where user_name='$obj->user_name'");
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         return $stmt->fetchAll();

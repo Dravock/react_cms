@@ -3,6 +3,7 @@ import { Card } from 'flowbite-react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Messages from '../../includes/enums/Messages'
+import Inputfield from '../../components/InputField/Inputfield'
 
 
 function SignUp() {
@@ -45,9 +46,10 @@ return (
                             <input className="rounded-2xl placeholder:pl-3 mx-2" type="text" placeholder='Stadt' onChange={inputListener} name="city"/>
                         </section>
                         <hr className='dashed'/>
-                        <section className='my-2'>
-                            <input className="rounded-2xl placeholder:pl-3 " type="password" placeholder='Password' onChange={inputListener} name="password"/>
-                            <input className="rounded-2xl placeholder:pl-3 mb-5" type="password" placeholder='Repeat Password' onChange={inputListener} name="password"/>
+                        <section className='my-2 '>                    
+                            <Inputfield type={'text'} id={'user_name'} name={'user_name'} label={'username'} inputData={inputData} setInputData={setInputData}/>
+                            <Inputfield type={'password'} id={'user_password'} name={'user_password'} label={'Password'} inputData={inputData} setInputData={setInputData}/>
+
                         </section>
                     </div>
                     <div className="text-center">

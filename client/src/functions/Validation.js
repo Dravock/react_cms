@@ -13,6 +13,10 @@ export const Validation = async () => {
     }
 
     return axios.get(process.env.REACT_APP_BASE_URL+'/login/checkauth.php',{headers: {'Authorization':"Bearer " +token}})
+                    .then((response)=>{
+                        return "200"
+                    }
+                    )
                     .catch((error) => {
                         if(error.response.status === 401){
                             throw Messages.unauthorized.message 

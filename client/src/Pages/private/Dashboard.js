@@ -29,9 +29,8 @@ useEffect(() => {
 return (
     <div>
         {loading === LoadingState.Active && <LoadingScreen text={LoadingMessages.GeneralWaiting}/>}
-        <Header />
         <div className='container md:mx-auto border bg-slate-400'>
-            <h1>Dashboard</h1>
+            <h1 className='text-center font-bold text-3xl'>Dashboard</h1>
         </div>
     </div>)}
 
