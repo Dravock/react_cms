@@ -13,7 +13,7 @@ function NavbarElement(props) {
   const cookies = new Cookies()
 
   const getURL=window.location.href
-  const name = sessionStorage.getItem('user_name').split(" ")
+  
   
 
 
@@ -39,6 +39,7 @@ const  logout =()=>{
 }
 
 const getUserName = () => {
+  const name = sessionStorage.getItem('user_name').split(" ")
   return Capitalize_First_Letter(name)
 }
 
@@ -68,12 +69,12 @@ return (
         </div> 
         :
         <div className="flex md:order-2">
-          <Dropdown arrowIcon={false} inline={true} label={ <Avatar alt="User Login or Sign Up" img={userAvatar} rounded={true}/> }>
+          <Dropdown arrowIcon={false} inline={true} >
             <Dropdown.Item> <button onClick={()=>pageHandler('/login')} className="block text-sm font-medium" > Login </button></Dropdown.Item>
-            <Dropdown.Item><button onClick={()=>pageHandler('/sign-up')} className="block text-sm font-medium" > Sign Up </button></Dropdown.Item>
+            <Dropdown.Item> <button onClick={()=>pageHandler('/sign-up')} className="block text-sm font-medium" > Sign Up </button></Dropdown.Item>
           </Dropdown>
         </div>
-}
+        }
 
         <Navbar.Collapse>
           <Navbar.Link className="hover-underline-animation "><button onClick={()=>pageHandler('/')} className="text-black font-bold"> Home</button></Navbar.Link>
